@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-<Link href="/content/Login"><a>jjj</a></Link>
+<Link href="/contents/Login"><a>Login page</a></Link>
     </div>
   )
 }
