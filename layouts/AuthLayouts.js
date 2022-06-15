@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 const useStyles = makeStyles({
@@ -24,6 +24,18 @@ const useStyles = makeStyles({
       right: "-10%",
       bottom: "15%",
       height: "40%",
+    },
+  },
+  right: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContents: "space-between",
+    padding: "10vh 7vw",
+    "& .logo": {
+      height: 40,
+      display: "block",
+      marginRight: 10,
     },
   },
 });
@@ -80,15 +92,19 @@ export const AuthLayouts1 = ({ children, type }) => {
         </div>
       </Grid>
       <Grid item xs={12} md={6}>
-        <Typography
-          variant="h5"
-          color="#007fff"
-          sx={{ fontWeight: "700", fontSize: "19px" }}
-        >
-          <img src="/img/Logo.png" height="20px" />
-          /Leturer
-        </Typography>
-        <Grid sx={{ marginTop: "120px" }}>{children}</Grid>
+        <div className={classes.right}>
+          <Box display="flex" alignItems="center" marginBottom={2}>
+            <img src="/img/Logo.png" className="logo" />
+            <Typography
+              variant="h5"
+              color="#007fff"
+              sx={{ fontWeight: "700", fontSize: 28, marginTop: 1.2 }}
+            >
+              / Lecturer
+            </Typography>
+          </Box>
+          {children}
+        </div>
       </Grid>
     </Grid>
   );
