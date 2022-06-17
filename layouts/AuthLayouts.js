@@ -1,8 +1,10 @@
 import { Grid, Box, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+
 import React from "react";
 const useStyles = makeStyles({
   left: {
+    display:"none",
     padding: "10vh 7vw",
     position: "relative",
     background: "#f7f7f7",
@@ -25,6 +27,19 @@ const useStyles = makeStyles({
       bottom: "15%",
       height: "40%",
     },
+    ["@media (min-width:1200px)"]:{
+display:"block"
+    },
+  },
+  bottom: {
+    position: "fixed",
+    bottom: "2vh",
+    display: "flex",
+    color: "#00bc4b",
+    "& .link": {
+      fontSize:13,
+      margin: 10,
+    },
   },
   right: {
     display: "flex",
@@ -33,13 +48,13 @@ const useStyles = makeStyles({
     justifyContents: "space-between",
     padding: "10vh 7vw",
     "& .logo": {
-      height: 40,
+      height: 28,
       display: "block",
       marginRight: 10,
     },
   },
 });
-export const AuthLayouts1 = ({ children, type }) => {
+export const AuthLayouts1 = ({ children, title }) => {
   const classes = useStyles();
   return (
     <Grid container>
@@ -93,8 +108,8 @@ export const AuthLayouts1 = ({ children, type }) => {
       </Grid>
       <Grid item xs={12} md={6}>
         <div className={classes.right}>
-          <Box display="flex" alignItems="center" marginBottom={2}>
-            <img src="/img/Logo.png" className="logo" />
+          <Box display="flex" alignItems="center"  marginBottom={2}>
+            <img src="/img/Logo.png"  className="logo" />
             <Typography
               variant="h5"
               color="#007fff"
@@ -102,7 +117,24 @@ export const AuthLayouts1 = ({ children, type }) => {
             >
               / Lecturer
             </Typography>
+          
+            
+           
+   
+         
           </Box>
+          <section className="title" >
+            <Typography variant="h4" color="#999" sx={{marginTop:-1,fontWeight:700}} >{title}</Typography>
+          </section>
+          <div className={classes.bottom}>
+            <div className="link">
+              <a href="">EsClass for student</a>
+            </div>
+            <div className="link">
+              {" "}
+              <a href="">EsClass for university</a>
+            </div>
+          </div>
           {children}
         </div>
       </Grid>
