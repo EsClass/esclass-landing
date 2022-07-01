@@ -38,7 +38,7 @@ function Section() {
        
         <Grid item  xs={12} md={6} display="flex" flexDirection="column">
             <div className="right">
-          <Typography variant="h4" fontWeight="700" lineHeight="1" >
+          <Typography variant="h4" fontWeight="700" lineHeight="2" >
             About esClass
           </Typography>
           <Typography color="#00cb4b" sx={{marginBottom:3}} >what we`re all about</Typography>

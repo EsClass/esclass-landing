@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     ["@media (min-width : 1200px)"]: {},
     "&.scrolled": {
       boxShadow: "0 5px 5px #0001",
-      background: "#fff",
+      background: "#00bc4b",
     },
     '& .MuiButton-text:hover':{
       background:"#00cb4c"
@@ -51,8 +51,8 @@ const useStyles = makeStyles({
         textDecoration: "none",
 
         "&:hover ,&.active": {
-          color: "var(--primary)",
-          borderBottom: "2px solid var(--primary)",
+          color: "#f90",
+          borderBottom: "6px solid #f90"
         },
       },
     },
@@ -71,7 +71,7 @@ const useStyles = makeStyles({
   },
   drawer: {
     zIndex: 1500,
-    background: "#f90",
+    background: "#00bc4b",
     position: "fixed",
     top: 0,
     left: 0,
@@ -88,7 +88,9 @@ const useStyles = makeStyles({
       padding: 15,
    
     },
-    
+    '& .mobile':{
+alignItems:"flex-start"
+    },
 
     "& ul": {
       display: "flex",
@@ -141,12 +143,12 @@ function AppToolbar({ active, routes = [], logo }) {
             </Link>
           </li>
         ))}
-        <div className="Mobile" ><Button variant="text"  > Sign in </Button>
-             <Button variant="text"   >Sign Up</Button></div>
+       
       </ul>
       
       
-  
+      <div className="Mobile" ><Button variant="text"  > Sign in </Button>
+             <Button variant="text"   >Sign Up</Button></div>
       
     </div>
   );
